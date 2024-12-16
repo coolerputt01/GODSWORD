@@ -1,0 +1,289 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family:'Poppins',sans-serif;
+  color:#FFFFFF;
+}
+body,html{
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+#mainContainer{
+  display:flex;
+  flex-direction: column;
+  height:100vh;
+}
+.main-page::after{
+  content:'';
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.5);
+  z-index: -1;
+}
+.main-page{
+  width:100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-image:url('https://i.postimg.cc/zXL9DKHW/markers-notebooks-wooden-tabletop.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center;
+  position: relative;
+  isolation: isolate;
+}
+.hero-title{
+  font-size:5.5em;
+  font-weight: bold;
+  width:100%;
+  animation:move-up 400ms ease-out forwards;
+}
+
+.hero-text{
+  display:flex;
+  width:100vw;
+  flex-direction: column;
+  padding:5%;
+  animation-delay:10ms;
+  animation:move-up 400ms ease-out forwards;
+}
+
+.hero-text-description{
+  width:45vw;
+  text-align: left;
+  font-size:1.5em;
+  padding:1px;
+  line-height: 170%;
+}
+
+.connect-with-us{
+  width:60vw;
+  font-size: 2em;
+  padding:8px;
+  color:#FFFFFF;
+  background-color: transparent;
+  outline:none;
+  border:1px solid #FFFFFF;
+  margin-top:8%;
+  border-radius:2px;
+  transition:all 750ms;
+}
+
+.bibles-container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+  background-color: transparent;
+}
+.bibles-container .bible{
+  position: absolute;
+  transform-origin: center;
+}
+.one{
+  animation:bible-anim-one 400ms ease-in-out forwards;
+  z-index:1;
+}
+.two{
+  animation:bible-anim-two 400ms ease-in-out forwards;
+  z-index:-1;
+}
+.three{
+  animation:bible-anim-three 400ms linear forwards;
+  z-index:-1;
+}
+.connect-with-us:hover{
+  background-color:#FFFFFF;
+  color: black;
+}
+@keyframes move-up{
+  from{
+    opacity:0.3;
+    transform: translateY(50%);
+  }
+  to{
+    opacity:1;
+    transform: translateY(0%);
+  }
+}
+@keyframes bible-anim-one{
+  from{
+    transform: translate(-150%,0%) rotate(-40deg);
+  }
+  to{
+    transform: translate(-150%,0%) rotate(0deg);
+  }
+}
+@keyframes bible-anim-two{
+  from{
+    transform: translate(-150%,0%) rotate(-40deg);
+  }
+  to{
+    transform: translate(-200%,0%) rotate(-30deg);
+  }
+}
+@keyframes bible-anim-three{
+  from{
+    transform: translate(-150%,0%) rotate(-40deg);
+  }
+  to{
+    transform: translate(-100%,0%) rotate(30deg);
+  }
+}
+
+.card-container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding:20%;
+  gap:50%;
+  background-image:url('https://i.ibb.co/yyvvgDP/dictionary-open-face-on-tomazl-1-removebg-preview.png');
+  background-repeat: no-repeat;
+  z-index:-1;
+  background-position:center;
+  background-size:cover;
+  opacity:1;
+  transition: all 950ms;
+}
+.explain-card{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap:30px;
+  transform-origin: center;
+}
+.card-image{
+  width:30vw;
+  height:15vh;
+  border-radius:10%;
+  padding:8px;
+  mix-blend-mode: multiply;
+}
+.card-text{
+  color:rgba(0,0,0,0.5);
+  padding:5%;
+  background-color: transparent;
+}
+.individual-card{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap:25%;
+}
+.left-card{
+  transform: rotateY(5deg) rotateX(5deg) translateZ(5px) skew(1deg,1deg);
+}
+.right-card{
+  transform: rotateY(25deg) rotateX(6deg) translateZ(5px) skew(-1deg,-1deg);
+}
+.section-header{
+  font-size:3.5em;
+  padding:10%;
+  text-align: center;
+  font-weight: normal;
+  color:#000;
+  width:100%;
+  perspective: 800px;
+  animation:skew-out 450ms linear forwards;
+  z-index:1;
+}
+@keyframes skew-out{
+  from{
+    transform: rotateY(5deg) rotateX(60deg) translateZ(50px) skew(5deg,2deg);
+  }
+  to{
+    transform: rotateY(0deg) rotateX(0deg) translateZ(0px);
+  }
+}
+.card-container.slideUp{
+    transform: translateY(0%);
+    opacity:1;
+  }
+    @keyframes fade-btn-in{
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+  100% {
+    opacity: 0.1;
+    scale: 0.5;
+  }
+}
+.up-button{
+  display:none;
+  align-items: center;
+  justify-content: center;
+    position: fixed;
+    top:80%;
+    right:10%;
+    width:18vw;
+    height:10vh;
+    font-size:2.3em;
+    padding:4%;
+    background-color:#8B4513;
+    border-radius:50%;
+    z-index: 10;
+    opacity:1;
+    transition:all 750ms;
+    text-decoration: none;
+  }
+
+ @media (max-width:628px) {
+   .hero-title{
+     font-size: 2.3em;
+   }
+   .hero-text{
+     gap:20%;
+   }
+   .hero-text-description{
+     font-size: 1em;
+     width:70vw;
+   }
+   .bibles-container{
+     display: none;
+   }
+   .connect-with-us{
+     width:80vw;
+     font-size: 1.2em;
+     padding: 8px;
+   }
+   .section-header{
+     font-size: 1.7em;
+     font-weight: bold;
+     width:100%;
+     text-shadow: 0px 3px 5px rgba(12,5,3,0.43);
+   }
+   .card-container{
+     background-image: url('#');
+     flex-direction: column;
+   }
+   .explain-card{
+     border-radius:4%;
+     box-shadow: 13px 17px 17px -20px rgba(0,0,0,0.4);
+   }
+   .left-card{
+     transform: rotateY(0deg) rotateX(0deg) translateZ(0px) skew(0deg,0deg);
+   }
+   .right-card{
+     transform: rotateY(0deg) rotateX(0deg) translateZ(0px) skew(0deg,0deg);
+   }
+   .card-image{
+     width:70vw;
+     height:37vh;
+     padding:3%;
+   }
+   .main-page{
+     height:80vh;
+     transform-origin: top;
+   }
+   .up-button{
+     display:flex;
+   }
+ }
